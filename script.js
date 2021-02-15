@@ -13,7 +13,7 @@ function callbackFunc() {
 
 addClickEventListener(button, callbackFunc)
 
-//promises
+//Simple promise example ---------------------------------------
 const promise = new Promise((resolve, reject) => {
     const sum = 1 + 1
     if (sum === 3) {
@@ -30,8 +30,10 @@ promise
     .catch(err => {
         console.log(err)
     })
+//----------------------------------------------------------
 
-// setTimeout function promise
+
+// setTimeout function promise -----------------------------
 function setTimeoutPromise(duration) {
     return new Promise((resolve, reject) => {
         setTimeout(resolve, duration)
@@ -59,8 +61,9 @@ setTimeoutPromise(250)
         console.log('5')
         return setTimeoutPromise(250)
     })
+//--------------------------------------------------
 
-
+//create promise for button click event------------
 function addEventListenerPromise(element, method) {
     return new Promise((resolve, reject) => {
         element.addEventListener(method, e => {
@@ -75,6 +78,22 @@ addEventListenerPromise(button, 'click')
         console.log('clicked from promise')
         console.log(e)
     })
+//------------------------------------------------
+
+//Promise all ---------------------------------------
+
+Promise.allSettled( [
+    Promise.resolve('ret 1'),
+    Promise.reject('ret 2'),
+    Promise.resolve('ret 3')
+])
+    .then(messages => {
+        console.log(messages)
+    })
+    .catch(err => {
+        console.error(err)
+    })
+
 
 
 
