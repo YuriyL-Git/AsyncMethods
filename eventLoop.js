@@ -6,6 +6,7 @@
 
 function test() {
     console.log('Hi 1')
+
     console.log('Hi 2')
     setTimeout(() => console.log('hi 4'), 0)
     new Promise((resolve, reject) => resolve('hi promise'))
