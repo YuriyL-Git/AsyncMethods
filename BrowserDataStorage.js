@@ -6,6 +6,8 @@
 // Client access| Client/Server | Client access
 // Easy to use  | Hard to use   | Easy
 
+//------------LOCAL AND SESSION STORAGES-------------
+
 // localStorage.setItem('Name', 'Test value')
 //sessionStorage.setItem('Age', '25')
 
@@ -15,6 +17,13 @@
 //sessionStorage.removeItem('Age')
 
 //console.log(localStorage.getItem('Name'))
+
+//---------COOKIES-------------------------------
+const date = new Date(9999, 1, 1).toUTCString() //expiration date
+const pastDate = new Date(1999, 1, 1).toUTCString()
+document.cookie = `name=Kyle; expires=${date}`
+
+document.cookie = `name=; expires=${pastDate}` // to delete the cookies
 
 
 
