@@ -1,10 +1,13 @@
-const buttons = document.querySelectorAll('button')
-buttons.forEach(button => {
-    button.addEventListener('click', e => {
-        e.stopPropagation()
-        console.log('clicked', button.innerHTML)
-    })
+//
+
+//
+
+document.addEventListener('click', event => {
+    if (event.target.matches('.cool')) {
+        console.log(event.target.innerHTML)
+    }
 })
 
-document.body.addEventListener('click', () => console.log('Body clicked'))
-document.addEventListener('click', () => console.log('Document clicked'))
+const newButton = document.createElement('button')
+newButton.innerText = 'newButton'
+document.body.appendChild(newButton)
